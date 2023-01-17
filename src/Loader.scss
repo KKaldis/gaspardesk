@@ -1,0 +1,22 @@
+.loader-wrapper {
+  position: relative;
+  height: 56px;
+  width: 100%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  transform-origin: center;
+  animation: rotate 2s infinite linear;
+  &:nth-child(even) {
+    animation-direction: reverse;
+  }
+}

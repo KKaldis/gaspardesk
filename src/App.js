@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import Loader from "./Loader";
 import NavMenu from "./NavMenu";
 import PostCard from "./PostCard";
 
@@ -32,9 +33,13 @@ const App = () => {
       <div className="App-Layout">
         <NavMenu />
         <Hero />
-        {data?.map((post) => (
-          <PostCard key={post.id} id={post.id} data={post.attributes} />
-        ))}
+        {data ? (
+          data.map((post) => (
+            <PostCard key={post.id} id={post.id} data={post.attributes} />
+          ))
+        ) : (
+          <Loader />
+        )}
         <Footer />
       </div>
     </div>

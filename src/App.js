@@ -6,39 +6,39 @@ import NavMenu from "./NavMenu";
 import PostCard from "./PostCard";
 
 const App = () => {
-
-  const [data, setData] = useState([]);
+  const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-
-      const response = await fetch("www-test.gaspardesk.com/cms/api/articles?populate=*", {
-        method: "GET"
-      });
       try {
+        const response = await fetch(
+          "https://www-test.gaspardesk.com/cms/api/articles?populate=*",
+          { method: "GET" }
+        );
         const json = await response.json();
-        setData(json);
-        console.log(data);
-      }
-      catch (error) {
+        setFetchedData(json);
+        console.log(json);
+      } catch (error) {
         console.log(error);
       }
-
-    }
+    };
     fetchData();
   }, []);
 
+  const { data, meta } = fetchedData;
 
   return (
     <div className="App">
       <div className="App-Layout">
         <NavMenu />
         <Hero />
-        <PostCard />
+        {data?.map((post) => (
+          <PostCard key={post.id} id={post.id} data={post.attributes} />
+        ))}
         <Footer />
       </div>
     </div>
   );
-}
+};
 
 export default App;

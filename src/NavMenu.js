@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./assets/logo.svg";
 import navarrow from "./assets/navarrow.svg";
+import "./NavMenu.scss";
 
 const NavMenu = () => {
     return (

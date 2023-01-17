@@ -13,7 +13,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://www-test.gaspardesk.com/cms/api/articles?populate=*",
+          `${process.env.REACT_APP_BACKEND_}/cms/api/articles?populate=*`,
           { method: "GET" }
         );
         const json = await response.json();

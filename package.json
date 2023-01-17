@@ -13,9 +13,9 @@
     "sass": "^1.57.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "mobileview": "react-scripts start -H 192.168.1.23 -p 3000",
-    "build": "react-scripts build",
+    "start": "react-scripts start NODE_ENV=development",
+    "mobileview": " react-scripts start NODE_ENV=development -H 192.168.1.23 -p 3000",
+    "build": "react-scripts build NODE_ENV=production",
     "eject": "react-scripts eject",
     "pretty code": "prettier --write \"**/*.{js,jsx,json,css,scss,ts,tsx,md}\""
   },

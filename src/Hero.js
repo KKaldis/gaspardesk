@@ -1,5 +1,5 @@
 import React from "react";
-import "./hero.scss";
+import "./Hero.scss";
 import arrow from "./assets/hero-arrow.svg";
 const Hero = () => {
   return (
@@ -19,6 +19,13 @@ const Hero = () => {
         <div className="hero-underlined">in</div>
         <div className="hero-boxed">IT Support</div>
       </div>
+      <p>
+        Stories on software, AI, IT support and tips. Βetter understand AI,
+        emerging technology and IT support trends, and how they impact your job.
+        Browse the latest news, research, product tips and best IT practices, to
+        educate yourself, lead the IT game and feel <br />
+        empowered to thrive at work.
+      </p>
     </div>
   );
 };

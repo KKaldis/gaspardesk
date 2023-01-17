@@ -4,9 +4,8 @@ $heroFontSize: 80px;
 
 .border-div {
   z-index: 2;
-
-  min-width: $lineHeight;
-  height: $lineHeight;
+  min-width: $line-height;
+  height: $line-height;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -16,12 +15,12 @@ $heroFontSize: 80px;
 
 .hero-rounded {
   @extend .border-div;
-  border-radius: calc($lineHeight / 1.9);
+  border-radius: calc($line-height / 1.9);
 }
 
 .hero-underlined {
   font-weight: 700;
-  border-bottom: 4px solid white;
+  border-bottom: 4px solid var(--light);
 }
 
 .hero-boxed {
@@ -34,25 +33,39 @@ $heroFontSize: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  // padding: 0px var(--layout-side-padding);
   gap: 32px;
+  color: var(--light);
 
   &:hover .hero-line:nth-child(2) {
-    padding-left: 112px;
+    padding-left: $line-height;
   }
   &:hover img {
     opacity: 1;
+  }
+
+  p {
+    width: 1060px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--light);
+    border-left: 4px solid var(--light);
+    padding-left: 16px;
   }
 }
 
 .hero-line {
   display: flex;
-  gap: 1rem;
+  gap: 32px;
   font-size: $heroFontSize;
   align-items: center;
   position: relative;
+  height: $line-height;
   &:nth-child(2) {
-    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     .border-div {
       padding: 0rem 1rem;
     }
@@ -64,7 +77,7 @@ $heroFontSize: 80px;
     position: absolute;
     left: 0;
     opacity: 0;
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-in;
     z-index: 1;
   }
 }

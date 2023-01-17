@@ -1,12 +1,25 @@
 $primary: #6bf7aa;
 $secondary: #3998ff;
+$secondary-darker: #2e59f5;
 $dark-blue: #00001a;
-$lineHeight: 112px;
+$line-height: 112px;
+$light: #f8f7f7;
+$border-muted: #4f4a4a;
+$page-width: 1440px;
+$layout-side-padding: 90px;
 
 :root {
   --primary: #{$primary};
   --secondary: #{$secondary};
+  --secondary-darker: #{$secondary-darker};
   --dark-blue: #{$dark-blue};
   --hero-border: #{$primary};
   --hero-bg: #{$dark-blue};
+  --light: #{$light};
+  --page-width: #{$page-width};
+  --layout-side-padding: #{$layout-side-padding};
+  --border-muted: #{$border-muted};
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");

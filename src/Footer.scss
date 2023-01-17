@@ -1,0 +1,35 @@
+.footer {
+  font-family: "Open Sans";
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container {
+  font-weight: 700;
+  color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+  padding: 56px 0px;
+}
+
+.sub-item {
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.footer-col {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright {
+  @extend .sub-item;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

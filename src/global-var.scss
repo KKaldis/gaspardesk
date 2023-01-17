@@ -1,0 +1,12 @@
+$primary: #6bf7aa;
+$secondary: #3998ff;
+$dark-blue: #00001a;
+$lineHeight: 112px;
+
+:root {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --dark-blue: #{$dark-blue};
+  --hero-border: #{$primary};
+  --hero-bg: #{$dark-blue};
+}

@@ -6,7 +6,7 @@ import "./NavMenu.scss";
 const NavMenu = () => {
   return (
     <div className="menu-container">
-      <img src={logo} alt="logo" />
+      <img src={logo} alt="Gaspardesk Logo" />
       <div className="button-wrapper">
         <div className="button-group">
           <div className="button-dropdown">

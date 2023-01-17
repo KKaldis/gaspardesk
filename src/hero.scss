@@ -10,7 +10,7 @@ $heroFontSize: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid var(--hero-border);
+  border: 0.25rem solid var(--hero-border);
 }
 
 .hero-rounded {
@@ -20,7 +20,7 @@ $heroFontSize: 80px;
 
 .hero-underlined {
   font-weight: 700;
-  border-bottom: 4px solid var(--light);
+  border-bottom: 0.25rem solid var(--light);
 }
 
 .hero-boxed {
@@ -34,8 +34,8 @@ $heroFontSize: 80px;
   flex-direction: column;
   align-items: flex-start;
   // padding: 0px var(--layout-side-padding);
-  gap: 32px;
-  color: var(--light);
+  gap: 2rem;
+  color: var(--text-light);
 
   &:hover .hero-line:nth-child(2) {
     padding-left: $line-height;
@@ -47,19 +47,18 @@ $heroFontSize: 80px;
   p {
     width: 1060px;
     font-family: "Open Sans";
-    font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 24px;
-    color: var(--light);
-    border-left: 4px solid var(--light);
-    padding-left: 16px;
+    color: var(--text-light);
+    border-left: 0.25rem solid var(--light);
+    padding-left: 1rem;
   }
 }
 
 .hero-line {
   display: flex;
-  gap: 32px;
+  gap: 2rem;
   font-size: $heroFontSize;
   align-items: center;
   position: relative;

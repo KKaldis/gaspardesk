@@ -1,5 +1,7 @@
 @import "./global-var.scss";
-
+html {
+  font-size: 16px;
+}
 body {
   margin: 0;
   background-color: black;
@@ -14,13 +16,13 @@ body {
   display: flex;
   flex-direction: column;
   width: var(--page-width);
-  padding: 32px 0px;
+  padding: 2rem 0px;
 }
 
 .App-Layout {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0px var(--layout-side-padding) 24px;
+  padding: 0px var(--layout-side-padding);
   gap: 126px;
 }

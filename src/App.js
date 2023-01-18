@@ -1,54 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense } from "react";
 import "./App.scss";
 import Footer from "./layout/Footer";
-import Hero from "./components/Hero";
-import Loader from "./components/ui/Loader";
 import NavMenu from "./layout/NavMenu";
-import PostCard from "./components/PostCard";
-import Tags from "./components/TagsSearch";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Loader from "./components/ui/Loader";
+import Blog from "./Blog";
 
 const App = () => {
-  const [fetchedData, setFetchedData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_}/cms/api/articles?populate=*`,
-          { method: "GET" }
-        );
-        const json = await response.json();
-        setFetchedData(json);
-        console.log(json);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  const { data, meta } = fetchedData;
+  const Landing = React.lazy(() => import("./Landing"));
 
   return (
-    <div className="App">
-      <div className="App-Layout">
-        <NavMenu />
-        <Hero />
-        <div>
-          <Tags />
-          <div className="posts-container">
-            {data ? (
-              data.map((post) => (
-                <PostCard key={post.id} id={post.id} data={post.attributes} />
-              ))
-            ) : (
-              <Loader />
-            )}
-          </div>
+    <Router>
+      <div className="App">
+        <div className="App-Layout">
+          <NavMenu />
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Landing />
+                </Suspense>
+              }
+            ></Route>
+            <Route
+              exact
+              path="/blog/:id"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Blog />
+                </Suspense>
+              }
+            ></Route>
+          </Routes>
+          <Footer />
         </div>
-        <Footer />
       </div>
-    </div>
+    </Router>
   );
 };
 

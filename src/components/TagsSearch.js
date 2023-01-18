@@ -2,7 +2,7 @@ import React from "react";
 import TagMore from "./TagMore";
 import "./TagsSearch.scss";
 
-const Tags = () => {
+const TagsSearch = () => {
   const tags = ["All Posts", "Remote work", "Employee support"];
   return (
     <>
@@ -22,4 +22,4 @@ const Tags = () => {
   );
 };
 
-export default Tags;
+export default TagsSearch;

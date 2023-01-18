@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import Loader from "./Loader";
 import NavMenu from "./NavMenu";
 import PostCard from "./PostCard";
+import { Tags } from "./Tags";
 
 const App = () => {
   const [fetchedData, setFetchedData] = useState([]);
@@ -33,13 +34,18 @@ const App = () => {
       <div className="App-Layout">
         <NavMenu />
         <Hero />
-        {data ? (
-          data.map((post) => (
-            <PostCard key={post.id} id={post.id} data={post.attributes} />
-          ))
-        ) : (
-          <Loader />
-        )}
+        <div>
+          <Tags />
+          <div className="posts-container">
+            {data ? (
+              data.map((post) => (
+                <PostCard key={post.id} id={post.id} data={post.attributes} />
+              ))
+            ) : (
+              <Loader />
+            )}
+          </div>
+        </div>
         <Footer />
       </div>
     </div>

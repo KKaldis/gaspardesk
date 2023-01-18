@@ -9,6 +9,7 @@ $gray-light: #b5b1b1;
 $page-width: 1440px;
 $layout-side-padding: 90px;
 $gray-opacity: rgba(247, 247, 247, 0.1);
+$white-opacity: rgba(247, 247, 247, 0.1);
 
 :root {
   --primary: #{$primary};
@@ -26,6 +27,7 @@ $gray-opacity: rgba(247, 247, 247, 0.1);
   --gray-opacity: #{$gray-opacity};
   --loader-secondary: #{$gray-opacity};
   --loader-primary: #{$secondary-darker};
+  --white-opacity: #{$white-opacity};
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");

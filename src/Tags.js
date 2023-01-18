@@ -1,19 +1,19 @@
 import React from "react";
+import TagMore from "./TagMore";
 import "./Tags.scss";
+
 export const Tags = () => {
+  const tags = ["All Posts", "Remote work", "Employee support"];
   return (
     <>
       <div className="tag-search-container">
         <div className="tag-btn-group">
-          <div className="tag-btn" active={true}>
-            All Posts
-          </div>
-          <div className="tag-btn" active={false}>
-            Remote work
-          </div>
-          <div className="tag-btn" active={false}>
-            Employee support
-          </div>
+          {tags.map((tag, i) => (
+            <div className="tag-btn" key={i}>
+              {tag}
+            </div>
+          ))}
+          <TagMore />
         </div>
         <input type="search" placeholder="Start typing..." />
       </div>

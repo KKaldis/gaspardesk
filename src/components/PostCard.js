@@ -3,6 +3,7 @@ import "./PostCard.scss";
 import next from "../assets/next.svg";
 import user from "../assets/user.svg";
 import Share from "./ui/Share";
+import { ImageLoader } from "./ui/ImageLoader";
 
 const PostCard = ({ data }) => {
   const { imageUrl, title, content, views, minsToRead, publishedAt } = data;
@@ -10,13 +11,13 @@ const PostCard = ({ data }) => {
   return (
     <div className="post-card">
       <div className="post-card-img">
-        <img src={imageUrl} alt="Blog Post Preview Image" />
+        <ImageLoader url={imageUrl} />
       </div>
       <div className="post-card-layout">
         <div className="post-card-space-between">
           <div className="post-card-header">
             <div className="post-card-avatar">
-              <img src={user} />
+              <img src={user} alt="" />
             </div>
             <div>
               <div className="post-card-author">Christos Karafeizis</div>
@@ -40,7 +41,7 @@ const PostCard = ({ data }) => {
           </div>
           <div className="botom-row2">
             <div>Read Blog Post</div>
-            <img src={next} />
+            <img src={next} alt="" />
           </div>
         </div>
       </div>

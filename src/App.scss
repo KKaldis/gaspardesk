@@ -29,4 +29,7 @@ body {
 
 .posts-container {
   padding: 2rem 0rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
 }

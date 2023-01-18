@@ -1,8 +1,8 @@
 import React from "react";
 import "./PostCard.scss";
-import ShareSvg from "./assets/ShareSvg";
-import next from "./assets/next.svg";
-import user from "./assets/user.svg";
+import next from "../assets/next.svg";
+import user from "../assets/user.svg";
+import Share from "./ui/Share";
 
 const PostCard = ({ data }) => {
   const { imageUrl, title, content, views, minsToRead, publishedAt } = data;
@@ -27,9 +27,7 @@ const PostCard = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="share-btn">
-            <ShareSvg />
-          </div>
+          <Share />
         </div>
         <div className="title">{title}</div>
         <p>{content}</p>

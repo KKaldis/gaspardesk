@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.scss";
-import logo from "./assets/footer-logo.svg";
-import navarrow from "./assets/navarrow.svg";
-import linkedin from "./assets/linkedin.svg";
-import twitter from "./assets/twitter.svg";
+import logo from "../assets/footer-logo.svg";
+import navarrow from "../assets/navarrow.svg";
+import linkedin from "../assets/linkedin.svg";
+import twitter from "../assets/twitter.svg";
 
 const Footer = () => {
   return (

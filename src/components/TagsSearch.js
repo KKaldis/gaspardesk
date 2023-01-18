@@ -1,8 +1,8 @@
 import React from "react";
 import TagMore from "./TagMore";
-import "./Tags.scss";
+import "./TagsSearch.scss";
 
-export const Tags = () => {
+const Tags = () => {
   const tags = ["All Posts", "Remote work", "Employee support"];
   return (
     <>
@@ -21,3 +21,5 @@ export const Tags = () => {
     </>
   );
 };
+
+export default Tags;

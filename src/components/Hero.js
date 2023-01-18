@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.scss";
-import arrow from "./assets/hero-arrow.svg";
+import arrow from "../assets/hero-arrow.svg";
 
 const Hero = () => {
   return (

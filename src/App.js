@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import Footer from "./Footer";
-import Hero from "./Hero";
-import Loader from "./Loader";
-import NavMenu from "./NavMenu";
-import PostCard from "./PostCard";
-import { Tags } from "./Tags";
+import Footer from "./layout/Footer";
+import Hero from "./components/Hero";
+import Loader from "./components/ui/Loader";
+import NavMenu from "./layout/NavMenu";
+import PostCard from "./components/PostCard";
+import Tags from "./components/TagsSearch";
 
 const App = () => {
   const [fetchedData, setFetchedData] = useState([]);

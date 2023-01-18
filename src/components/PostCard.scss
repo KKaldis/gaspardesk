@@ -1,7 +1,6 @@
 .post-card {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   padding: 1.5rem;
   gap: 2rem;
   font-family: "Open Sans";
@@ -59,7 +58,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   border: 1px solid var(--gray-opacity);

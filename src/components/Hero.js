@@ -15,7 +15,7 @@ const Hero = () => {
         ></div>
       </div>
       <div className="hero-line">
-        <img src={arrow} />
+        <img src={arrow} alt="" />
         <div className="hero-solid-bg ">magic</div>
         <div className="hero-underlined">in</div>
         <div className="hero-boxed">IT Support</div>

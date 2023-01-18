@@ -12,7 +12,7 @@ const NavMenu = () => {
           <div className="button-dropdown">
             <div className="button-outline">
               Platform
-              <img src={navarrow} />
+              <img src={navarrow} alt="" />
             </div>
             <ul>
               <li className="button-outline">Integrations</li>

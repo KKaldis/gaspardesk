@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer-col">
           <div className="item">
             Platform
-            <img src={navarrow} />
+            <img src={navarrow} alt="" />
           </div>
           <div className="sub-item">Integrations</div>
           <div className="sub-item">Pricing</div>

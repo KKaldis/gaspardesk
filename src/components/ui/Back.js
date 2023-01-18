@@ -1,13 +1,13 @@
 import React from "react";
-import ShareSvg from "../../assets/ShareSvg";
+import BackSvg from "../../assets/BackSvg";
 import "./SquareButton.scss";
 
-const Share = () => {
+const Back = ({ to }) => {
   return (
     <div className="square-btn">
-      <ShareSvg />
+      <BackSvg />
     </div>
   );
 };
 
-export default Share;
+export default Back;

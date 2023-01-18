@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Back from "./components/ui/Back";
 
 const Blog = () => {
   const { id } = useParams();
-
   const [fetchedData, setFetchedData] = useState();
 
   useEffect(() => {
@@ -21,9 +21,17 @@ const Blog = () => {
       }
     };
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
-  return <div style={{ color: "red " }}>{JSON.stringify(fetchedData)}</div>;
+  return (
+    <div style={{ color: "red " }}>
+      <Link to="/">
+        <Back />
+      </Link>
+      <div>{JSON.stringify(fetchedData)}</div>
+    </div>
+  );
 };
 
 export default Blog;

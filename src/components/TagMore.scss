@@ -1,15 +1,3 @@
-@import "./TagsSearch.scss";
-
-.tag-btn-more {
-  @extend .tag-btn;
-  position: relative;
-  background-color: transparent;
-  box-shadow: inset 0px 0px 0px 1px var(--border-muted) !important;
-  &:hover {
-    box-shadow: inset 0px 0px 0px 2px var(--secondary) !important;
-  }
-}
-
 .more-container {
   position: absolute;
   background-color: var(--dark-blue);
@@ -37,8 +25,4 @@
   @extend .more-container;
   pointer-events: all !important;
   opacity: 1 !important;
-}
-.tag-btn-more-show {
-  @extend .tag-btn-more;
-  box-shadow: inset 0px 0px 0px 2px var(--secondary) !important;
 }

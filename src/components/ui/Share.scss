@@ -8,6 +8,7 @@
   border: 1px solid var(--secondary);
   border-radius: 0.5rem;
   transition: 0.25s all ease-in-out;
+  aspect-ratio: 1 /1;
   .svg-share {
     transition: inherit;
     fill: var(--light);

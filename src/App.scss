@@ -1,13 +1,19 @@
 @import "./styles/global-var.scss";
 
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .App {
   background-color: var(--dark-blue);
   display: flex;
   flex-direction: column;
   max-width: var(--page-width);
   padding: 2rem 0px;
-  width: 100%;
   min-width: 400px;
+  width: 100%;
 }
 
 .App-Layout {

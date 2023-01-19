@@ -64,7 +64,12 @@ $heroFontSize: 80px;
   align-items: center;
   position: relative;
   max-width: 100%;
-  height: $line-height;
+  flex-wrap: wrap;
+  height: auto;
+  @media only screen and (min-width: 1220px) {
+    height: $line-height;
+  }
+
   &:nth-child(2) {
     transition: all 0.6s cubic-bezier(0.45, 1.64, 0.48, 0.15);
     .border-div {

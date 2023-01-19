@@ -1,23 +1,31 @@
-import React from "react";
-import { useSelectedTag, useSetSelectedTag } from "../context/ContextProviders";
-import { postTagsArray } from "../utils/postTagsArray";
+import React, { useEffect } from "react";
+import ACTIONS from "../context/actions";
+import { useGetContext, useUpdateContext } from "../context/ContextProviders";
 import TagMore from "./TagMore";
 
-const TagsSearch = ({ data }) => {
-  const selectedTag = useSelectedTag();
-  const setSelectedTag = useSetSelectedTag();
+const TagsSearch = () => {
+  const state = useGetContext();
+  const updateContext = useUpdateContext();
+  const { selectedTag, mainTags, moreTags } = state;
 
-  const tags = data?.reduce((accu, curr) => {
-    const tagsArray = postTagsArray(curr);
-    //check if item exists to master array and return if not
-    const uniqueTags = tagsArray.filter((tag) => !accu.includes(tag));
-    // spread accumulator + non existant tags
-    return [...accu, ...uniqueTags];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_}/cms/api/tags/`,
+          { method: "GET" }
+        );
+        const json = await response.json();
+        const { data } = json;
+        updateContext({ type: ACTIONS.SET_TAGS, payload: data });
+        console.log();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
   }, []);
 
-  const mainTags = tags.slice(0, 2);
-  const moreTags = tags.slice(2);
-  mainTags.unshift("All Articles");
   return (
     <>
       <div className="tag-search-container">
@@ -26,7 +34,9 @@ const TagsSearch = ({ data }) => {
             <div
               className={selectedTag === tag ? "tag-btn-selected" : "tag-btn"}
               key={i}
-              onClick={() => setSelectedTag(tag)}
+              onClick={() =>
+                updateContext({ type: ACTIONS.SET_SELECTED_TAG, payload: tag })
+              }
             >
               {tag}
             </div>

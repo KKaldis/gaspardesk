@@ -1,11 +1,12 @@
 import React, { useState, useRef } from "react";
-import { useSelectedTag, useSetSelectedTag } from "../context/ContextProviders";
+import ACTIONS from "../context/actions";
+import { useGetContext, useUpdateContext } from "../context/ContextProviders";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import "./TagMore.scss";
 
 const TagMore = ({ tags }) => {
-  const selectedTag = useSelectedTag();
-  const setSelectedTag = useSetSelectedTag();
+  const selectedTag = useGetContext();
+  const updateContext = useUpdateContext();
   const [show, setShow] = useState(false);
   const containerRef = useRef();
   useOnClickOutside(containerRef, () => setShow(false));
@@ -33,7 +34,7 @@ const TagMore = ({ tags }) => {
             key={i}
             onClick={(e) => {
               e.stopPropagation();
-              setSelectedTag(tag);
+              updateContext({ type: ACTIONS.SET_SELECTED_TAG, payload: tag });
             }}
           >
             {tag}

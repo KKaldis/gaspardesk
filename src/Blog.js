@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Blog = () => {
-  const { id } = useParams();
-
   const [fetchedData, setFetchedData] = useState();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

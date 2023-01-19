@@ -1,19 +1,28 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useReducer } from "react";
+import reducer from "./reducer";
 
-const TagsContext = createContext();
-const TagsUpdateContext = createContext();
+const Context = createContext();
+const UpdateContext = createContext();
 
-export const useSelectedTag = () => useContext(TagsContext);
-export const useSetSelectedTag = () => useContext(TagsUpdateContext);
+export const useGetContext = () => useContext(Context);
+export const useUpdateContext = () => useContext(UpdateContext);
 
 const TagsProvider = ({ children }) => {
-  const [selectedTag, setSelectedTag] = useState("All Articles");
+  const [state, dispatch] = useReducer(reducer, {
+    selectedTag: "All Articles",
+    posts: null,
+    tags: ["All Articles"],
+    mainTags: [],
+    moreTags: [],
+    filteredPosts: null,
+  });
+
   return (
-    <TagsContext.Provider value={selectedTag}>
-      <TagsUpdateContext.Provider value={setSelectedTag}>
+    <Context.Provider value={state}>
+      <UpdateContext.Provider value={dispatch}>
         {children}
-      </TagsUpdateContext.Provider>
-    </TagsContext.Provider>
+      </UpdateContext.Provider>
+    </Context.Provider>
   );
 };
 

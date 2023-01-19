@@ -1,22 +1,11 @@
 import React, { useState, useRef } from "react";
+import { useSelectedTag, useSetSelectedTag } from "../context/ContextProviders";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import "./TagMore.scss";
 
-const TagMore = () => {
-  const moreItems = [
-    "Automations",
-    "Money",
-    "Money",
-    "Resolution Time",
-    "ROI",
-    "Tickets",
-    "Tag 1",
-    "Tag 2",
-    "Tag 4",
-    "Tag 5",
-    "AI Conversation Chatbot",
-    "Company Priorities",
-  ];
+const TagMore = ({ tags }) => {
+  const selectedTags = useSelectedTag();
+  const setSelectedTag = useSetSelectedTag();
   const [show, setShow] = useState(false);
   const containerRef = useRef();
   useOnClickOutside(containerRef, () => setShow(false));
@@ -30,7 +19,7 @@ const TagMore = () => {
       }}
       id="btn-more-tags"
     >
-      +{moreItems.length}
+      +{tags.length}
       <div
         ref={containerRef}
         className={show ? "more-container-show" : "more-container"}
@@ -38,8 +27,15 @@ const TagMore = () => {
           e.stopPropagation();
         }}
       >
-        {moreItems.map((item, i) => (
-          <div className="tag-btn" key={i}>
+        {tags.map((item, i) => (
+          <div
+            className="tag-btn"
+            key={i}
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedTag(item);
+            }}
+          >
             {item}
           </div>
         ))}

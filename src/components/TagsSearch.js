@@ -3,9 +3,9 @@ import { useSelectedTag, useSetSelectedTag } from "../context/ContextProviders";
 import TagMore from "./TagMore";
 
 const TagsSearch = ({ data }) => {
-  const selectedTags = useSelectedTag();
+  const selectedTag = useSelectedTag();
   const setSelectedTag = useSetSelectedTag();
-  console.log(selectedTags);
+
   const tags = data?.reduce((accu, curr) => {
     const postTagsArray = curr.attributes.tags.data.reduce(
       (accuPostTags, currPostTags) => [
@@ -22,15 +22,14 @@ const TagsSearch = ({ data }) => {
 
   const mainTags = tags.slice(0, 2);
   const moreTags = tags.slice(2);
-
+  mainTags.unshift("All Articles");
   return (
     <>
       <div className="tag-search-container">
         <div className="tag-btn-group">
-          <div className="tag-btn">All Articles</div>
           {mainTags.map((tag, i) => (
             <div
-              className="tag-btn"
+              className={selectedTag === tag ? "tag-btn-selected" : "tag-btn"}
               key={i}
               onClick={() => setSelectedTag(tag)}
             >

@@ -4,7 +4,7 @@ import useOnClickOutside from "../hooks/useOnClickOutside";
 import "./TagMore.scss";
 
 const TagMore = ({ tags }) => {
-  const selectedTags = useSelectedTag();
+  const selectedTag = useSelectedTag();
   const setSelectedTag = useSetSelectedTag();
   const [show, setShow] = useState(false);
   const containerRef = useRef();
@@ -27,16 +27,16 @@ const TagMore = ({ tags }) => {
           e.stopPropagation();
         }}
       >
-        {tags.map((item, i) => (
+        {tags.map((tag, i) => (
           <div
-            className="tag-btn"
+            className={selectedTag === tag ? "tag-btn-selected" : "tag-btn"}
             key={i}
             onClick={(e) => {
               e.stopPropagation();
-              setSelectedTag(item);
+              setSelectedTag(tag);
             }}
           >
-            {item}
+            {tag}
           </div>
         ))}
       </div>

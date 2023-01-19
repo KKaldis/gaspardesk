@@ -26,6 +26,7 @@ $heroFontSize: 80px;
 .hero-boxed {
   @extend .border-div;
   border-radius: 1rem 1rem 1rem 0rem;
+  white-space: nowrap;
 }
 
 .hero {
@@ -45,7 +46,7 @@ $heroFontSize: 80px;
   }
 
   p {
-    width: 1060px;
+    max-width: 1060px;
     font-family: "Open Sans";
     font-weight: 400;
     font-size: 1rem;
@@ -62,7 +63,13 @@ $heroFontSize: 80px;
   font-size: $heroFontSize;
   align-items: center;
   position: relative;
-  height: $line-height;
+  max-width: 100%;
+  flex-wrap: wrap;
+  height: auto;
+  @media only screen and (min-width: 1220px) {
+    height: $line-height;
+  }
+
   &:nth-child(2) {
     transition: all 0.6s cubic-bezier(0.45, 1.64, 0.48, 0.15);
     .border-div {

@@ -1,6 +1,5 @@
 import React from "react";
 import TagMore from "./TagMore";
-import "./TagsSearch.scss";
 
 const TagsSearch = () => {
   const tags = ["All Posts", "Remote work", "Employee support"];

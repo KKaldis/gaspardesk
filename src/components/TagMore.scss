@@ -1,22 +1,9 @@
-@import "./TagsSearch.scss";
-
-.tag-btn-more {
-  @extend .tag-btn;
-  position: relative;
-  background-color: transparent;
-  box-shadow: inset 0px 0px 0px 1px var(--border-muted) !important;
-  &:hover {
-    box-shadow: inset 0px 0px 0px 2px var(--secondary) !important;
-  }
-}
-
 .more-container {
   position: absolute;
   background-color: var(--dark-blue);
   border: var(--secondary) 2px solid;
   border-radius: 1rem;
   top: 0;
-  left: calc(100% + 0.5rem);
   width: auto;
   padding: 1rem;
   display: flex;
@@ -31,14 +18,16 @@
   opacity: 0;
   pointer-events: none;
   cursor: default;
+  left: calc(100% + 0.5rem);
+  right: auto;
+  @media only screen and (max-width: 1000px) {
+    right: calc(100% + 0.5rem);
+    left: auto !important;
+  }
 }
 
 .more-container-show {
   @extend .more-container;
   pointer-events: all !important;
   opacity: 1 !important;
-}
-.tag-btn-more-show {
-  @extend .tag-btn-more;
-  box-shadow: inset 0px 0px 0px 2px var(--secondary) !important;
 }

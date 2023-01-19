@@ -1,22 +1,12 @@
 import React, { useState, useRef } from "react";
+import ACTIONS from "../context/actions";
+import { useGetContext, useUpdateContext } from "../context/ContextProviders";
 import useOnClickOutside from "../hooks/useOnClickOutside";
 import "./TagMore.scss";
 
-const TagMore = () => {
-  const moreItems = [
-    "Automations",
-    "Money",
-    "Money",
-    "Resolution Time",
-    "ROI",
-    "Tickets",
-    "Tag 1",
-    "Tag 2",
-    "Tag 4",
-    "Tag 5",
-    "AI Conversation Chatbot",
-    "Company Priorities",
-  ];
+const TagMore = ({ tags }) => {
+  const selectedTag = useGetContext();
+  const updateContext = useUpdateContext();
   const [show, setShow] = useState(false);
   const containerRef = useRef();
   useOnClickOutside(containerRef, () => setShow(false));
@@ -30,7 +20,7 @@ const TagMore = () => {
       }}
       id="btn-more-tags"
     >
-      +{moreItems.length}
+      +{tags.length}
       <div
         ref={containerRef}
         className={show ? "more-container-show" : "more-container"}
@@ -38,9 +28,16 @@ const TagMore = () => {
           e.stopPropagation();
         }}
       >
-        {moreItems.map((item, i) => (
-          <div className="tag-btn" key={i}>
-            {item}
+        {tags.map((tag, i) => (
+          <div
+            className={selectedTag === tag ? "tag-btn-selected" : "tag-btn"}
+            key={i}
+            onClick={(e) => {
+              e.stopPropagation();
+              updateContext({ type: ACTIONS.SET_SELECTED_TAG, payload: tag });
+            }}
+          >
+            {tag}
           </div>
         ))}
       </div>

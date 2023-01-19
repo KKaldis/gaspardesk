@@ -56,16 +56,20 @@ a {
   border-radius: 1.5rem;
   color: var(--text-gray);
   cursor: pointer;
-  &:active {
-    box-shadow: inset 0px 0px 0px 2px var(--primary) !important;
-  }
+
   &:hover {
     box-shadow: inset 0px 0px 0px 1px var(--secondary);
   }
 }
 
+.tag-btn-selected {
+  @extend .tag-btn;
+  box-shadow: inset 0px 0px 0px 2px var(--primary) !important;
+}
+
 .tag-btn-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
 }
 
@@ -130,8 +134,8 @@ input[type="search"] {
   @extend .tag-btn;
   position: relative;
   background-color: transparent;
-  box-shadow: inset 0px 0px 0px 1px var(--border-muted) !important;
+  box-shadow: inset 0px 0px 0px 1px var(--border-muted);
   &:hover {
-    box-shadow: inset 0px 0px 0px 2px var(--secondary) !important;
+    box-shadow: inset 0px 0px 0px 2px var(--secondary);
   }
 }

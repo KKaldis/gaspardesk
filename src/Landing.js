@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
-import PostCard from "./components/PostCard";
+import React, { useEffect } from "react";
 import Hero from "./components/Hero";
 import TagsSearch from "./components/TagsSearch";
 import Loader from "./components/ui/Loader";
-import { Link } from "react-router-dom";
+import { PostContainer } from "./components/PostContainer";
+import { useGetContext, useUpdateContext } from "./context/ContextProviders";
+import ACTIONS from "./context/actions";
 
 const Landing = () => {
-  const [fetchedData, setFetchedData] = useState([]);
+  const state = useGetContext();
+  const updateContext = useUpdateContext();
+  const { posts } = state;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,8 +19,7 @@ const Landing = () => {
           { method: "GET" }
         );
         const json = await response.json();
-        setFetchedData(json);
-        console.log(json);
+        updateContext({ type: ACTIONS.SET_FETCHED_POSTS, payload: json });
       } catch (error) {
         console.log(error);
       }
@@ -25,25 +27,17 @@ const Landing = () => {
     fetchData();
   }, []);
 
-  const { data, meta } = fetchedData;
-
   return (
     <>
       <Hero />
-      <div>
-        <TagsSearch />
-        <div className="posts-container">
-          {data ? (
-            data.map((post) => (
-              <Link to={`/blog/${post.id}`}>
-                <PostCard key={post.id} id={post.id} data={post.attributes} />
-              </Link>
-            ))
-          ) : (
-            <Loader />
-          )}
+      {posts ? (
+        <div>
+          <TagsSearch />
+          <PostContainer />
         </div>
-      </div>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import Back from "./components/ui/Back";
 
 const Blog = () => {
-  const { id } = useParams();
   const [fetchedData, setFetchedData] = useState();
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

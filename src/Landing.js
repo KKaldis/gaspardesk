@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
-import PostCard from "./components/PostCard";
+import React, { useState, useEffect } from "react";
 import Hero from "./components/Hero";
 import TagsSearch from "./components/TagsSearch";
 import Loader from "./components/ui/Loader";
-import { Link } from "react-router-dom";
-import TagsProvider, { useSelectedTag } from "./context/ContextProviders";
+import TagsProvider from "./context/ContextProviders";
+import { PostContainer } from "./components/PostContainer";
 
 const Landing = () => {
   const [fetchedData, setFetchedData] = useState([]);
-  const selectedTags = useSelectedTag();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,13 +34,7 @@ const Landing = () => {
         <div>
           <TagsProvider>
             <TagsSearch data={data} />
-            <div className="posts-container">
-              {data.map((post) => (
-                <Link to={`/blog/${post.id}`} key={post.id}>
-                  <PostCard id={post.id} data={post.attributes} />
-                </Link>
-              ))}
-            </div>
+            <PostContainer data={data} />
           </TagsProvider>
         </div>
       ) : (

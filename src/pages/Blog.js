@@ -26,12 +26,7 @@ const Blog = () => {
       }
     };
 
-    const scrollTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
     fetchData();
-    scrollTop();
     // eslint-disable-next-line
   }, [id]);
 

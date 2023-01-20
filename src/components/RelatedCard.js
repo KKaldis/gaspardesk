@@ -3,8 +3,7 @@ import { ImageLoader } from "./ui/ImageLoader";
 import next from "../assets/next.svg";
 
 const RelatedCard = ({ data }) => {
-  const { imageUrl, title, content, views, minsToRead, publishedAt } =
-    data.attributes;
+  const { imageUrl, title, publishedAt } = data.attributes;
   const date = new Date(publishedAt);
   return (
     <div className="post-related-card">

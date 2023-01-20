@@ -18,7 +18,6 @@ const TagsSearch = () => {
         const json = await response.json();
         const { data } = json;
         updateContext({ type: ACTIONS.SET_TAGS, payload: data });
-        console.log();
       } catch (error) {
         console.log(error);
       }

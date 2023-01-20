@@ -20,7 +20,6 @@ const Blog = () => {
         );
         const json = await response.json();
         setFetchedData(json);
-        console.log(json);
       } catch (error) {
         console.log(error);
       }

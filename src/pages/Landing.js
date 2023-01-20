@@ -5,6 +5,7 @@ import Loader from "../components/ui/Loader";
 import { PostContainer } from "../components/PostContainer";
 import { useGetContext, useUpdateContext } from "../context/ContextProviders";
 import ACTIONS from "../context/actions";
+import Pagination from "../components/ui/Pagination";
 
 const Landing = () => {
   const state = useGetContext();
@@ -35,6 +36,7 @@ const Landing = () => {
         <div>
           <TagsSearch />
           <PostContainer />
+          <Pagination />
         </div>
       ) : (
         <Loader />

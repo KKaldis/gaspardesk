@@ -1,7 +1,7 @@
 import React from "react";
 import "./Loader.scss";
 
-function Loader() {
+const Loader = () => {
   return (
     <svg
       className="loader-wrapper"
@@ -34,6 +34,6 @@ function Loader() {
       <circle cx="28" cy="28" r="4" fill="var(--loader-secondary)" />
     </svg>
   );
-}
+};
 
 export default Loader;

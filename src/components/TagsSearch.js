@@ -24,6 +24,7 @@ const TagsSearch = () => {
       }
     };
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   return (

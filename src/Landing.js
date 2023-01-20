@@ -25,6 +25,7 @@ const Landing = () => {
       }
     };
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   return (

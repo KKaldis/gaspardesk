@@ -70,7 +70,8 @@ const Blog = () => {
           <div className="post-content-wrapper">
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
 
-            {fetchedData?.data?.attributes.content}</div>
+            {fetchedData?.data?.attributes.content}
+          </div>
           {/* <div>{JSON.stringify(fetchedData)}</div> */}
         </div>
       ) : (

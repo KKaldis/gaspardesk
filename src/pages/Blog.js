@@ -12,6 +12,7 @@ const Blog = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    setFetchedData(false)
     const fetchData = async () => {
       try {
         const response = await fetch(

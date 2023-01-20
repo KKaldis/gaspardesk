@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Hero from "./components/Hero";
-import TagsSearch from "./components/TagsSearch";
-import Loader from "./components/ui/Loader";
-import { PostContainer } from "./components/PostContainer";
-import { useGetContext, useUpdateContext } from "./context/ContextProviders";
-import ACTIONS from "./context/actions";
+import Hero from "../components/Hero";
+import TagsSearch from "../components/TagsSearch";
+import Loader from "../components/ui/Loader";
+import { PostContainer } from "../components/PostContainer";
+import { useGetContext, useUpdateContext } from "../context/ContextProviders";
+import ACTIONS from "../context/actions";
 
 const Landing = () => {
   const state = useGetContext();

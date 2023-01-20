@@ -8,8 +8,8 @@ import Loader from "./components/ui/Loader";
 import ContextProvider from "./context/ContextProviders";
 
 const App = () => {
-  const Landing = React.lazy(() => import("./Landing"));
-  const Blog = React.lazy(() => import("./Blog"));
+  const Landing = React.lazy(() => import("./pages/Landing"));
+  const Blog = React.lazy(() => import("./pages/Blog"));
 
   return (
     <Router>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Back from "./components/ui/Back";
-import Share from "./components/ui/Share";
+import Back from "../components/ui/Back";
+import Share from "../components/ui/Share";
 import "./Blog.scss";
-import Loader from "./components/ui/Loader";
-import UserIcon from "./components/ui/UserIcon";
-import { ImageLoader } from "./components/ui/ImageLoader";
-import RelatedContainer from "./components/RelatedContainer";
+import Loader from "../components/ui/Loader";
+import UserIcon from "../components/ui/UserIcon";
+import { ImageLoader } from "../components/ui/ImageLoader";
+import RelatedContainer from "../components/RelatedContainer";
 const Blog = () => {
   const [fetchedData, setFetchedData] = useState(false);
   const { id } = useParams();
@@ -41,7 +41,6 @@ const Blog = () => {
               <span>/Blog Post</span>
             </div>
           </div>
-          {/* <div> */}
           <div className="blog-post-title">
             {fetchedData?.data?.attributes?.title}
           </div>
@@ -71,7 +70,6 @@ const Blog = () => {
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
             {fetchedData?.data?.attributes.content}
           </div>
-          {/* </div> */}
           <RelatedContainer />
         </div>
       ) : (

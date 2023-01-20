@@ -8,6 +8,7 @@ const RelatedCard = ({ data }) => {
   const { id } = data;
   console.log(data);
   const date = new Date(publishedAt);
+
   return (
     <div className="post-related-card">
       <Link to={`/blog/${id}/`}>

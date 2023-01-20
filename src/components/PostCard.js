@@ -1,9 +1,9 @@
 import React from "react";
 import "./PostCard.scss";
 import next from "../assets/next.svg";
-import user from "../assets/user.svg";
 import Share from "./ui/Share";
 import { ImageLoader } from "./ui/ImageLoader";
+import UserIcon from "./ui/UserIcon";
 
 const PostCard = ({ data }) => {
   const { imageUrl, title, content, views, minsToRead, publishedAt } = data;
@@ -16,9 +16,7 @@ const PostCard = ({ data }) => {
       <div className="post-card-layout">
         <div className="post-card-space-between">
           <div className="post-card-header">
-            <div className="post-card-avatar">
-              <img src={user} alt="" />
-            </div>
+            <UserIcon />
             <div>
               <div className="post-card-author">Christos Karafeizis</div>
               <div className="header-details">

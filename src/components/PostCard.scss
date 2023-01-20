@@ -6,7 +6,7 @@
   font-family: "Open Sans";
   font-weight: 400;
   color: var(--text-gray);
-  background: var(--gray-opacity);
+  background: var(--white-opacity);
   border-radius: 1rem;
   cursor: pointer;
   .title {
@@ -34,16 +34,12 @@
     padding: 0rem 1rem;
     height: 2rem;
     cursor: pointer;
-    background: var(--gray-opacity);
+    background: var(--white-opacity);
     border-radius: 1.5rem;
     border: 1px solid transparent;
     &:hover {
       border: 1px solid var(--secondary);
     }
-  }
-  .vl {
-    border-left: 1px solid var(--gray-opacity);
-    height: 0.75rem;
   }
 }
 
@@ -63,7 +59,7 @@
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  border: 1px solid var(--gray-opacity);
+  border: 1px solid var(--white-opacity);
   border-radius: 0.5rem;
   height: auto;
   img {
@@ -105,21 +101,6 @@
 .botom-row2 {
   @extend .layout-flex;
   gap: 1rem;
-}
-
-.post-card-avatar {
-  width: 2.25rem;
-  height: 2.25rem;
-  border: 1px solid var(--secondary);
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  aspect-ratio: 1/ 1;
-  img {
-    height: 1.25rem;
-    width: 1.25rem;
-  }
 }
 
 .post-card-author {

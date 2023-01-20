@@ -1,4 +1,3 @@
-import { postTagsArray } from "../utils/postTagsArray";
 import ACTIONS from "./actions";
 
 const reducer = (state, action) => {
@@ -11,7 +10,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         selectedTag: action.payload,
-        filteredPosts: filteredPosts(state.posts, action.payload),
+        filteredPosts: filterPosts(state.posts, action.payload),
         mainTags:
           moreTagsSelectedIndex !== -1
             ? ["All Articles", ...mainTagsVar, action.payload]
@@ -35,7 +34,7 @@ const reducer = (state, action) => {
         ...state,
         posts: action.payload.data,
         ...action.payload.meta,
-        filteredPosts: filteredPosts(action.payload.data, state.selectedTag),
+        filteredPosts: filterPosts(action.payload.data, state.selectedTag),
       };
 
     default:
@@ -44,11 +43,21 @@ const reducer = (state, action) => {
 };
 const mainTags = (state) => state.map((tag) => tag.attributes.name).slice(0, 2);
 const moreTags = (state) => state.map((tag) => tag.attributes.name).slice(2);
-const filteredPosts = (state, selectedTag) =>
+const filterPosts = (state, selectedTag) =>
   state.filter((post) =>
     selectedTag === "All Articles"
       ? state
       : postTagsArray(post).includes(selectedTag)
   );
+
+const postTagsArray = (arr) => {
+  return arr.attributes.tags.data.reduce(
+    (accuPostTags, currPostTags) => [
+      ...accuPostTags,
+      currPostTags.attributes.name,
+    ],
+    []
+  );
+};
 
 export default reducer;

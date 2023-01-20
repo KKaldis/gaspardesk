@@ -52,7 +52,7 @@ a {
   @extend .btn;
   text-align: center;
   padding: 0.5rem 1rem;
-  background: var(--gray-opacity);
+  background: var(--white-opacity);
   border-radius: 1.5rem;
   color: var(--text-gray);
   cursor: pointer;
@@ -138,4 +138,24 @@ input[type="search"] {
   &:hover {
     box-shadow: inset 0px 0px 0px 2px var(--secondary);
   }
+}
+
+.user-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--secondary);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  aspect-ratio: 1/ 1;
+  img {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
+
+.vl {
+  border-left: 2px solid var(--white-opacity);
+  height: 1rem;
 }

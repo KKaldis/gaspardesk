@@ -14,6 +14,7 @@ export const ImageLoader = ({ url }) => {
         alt="Blog Post Preview"
         onLoad={() => setIsLoading(false)}
         style={{ display: isLoading ? "none" : "block" }}
+        width={"100%"}
       />
     </>
   );

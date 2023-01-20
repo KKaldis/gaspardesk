@@ -26,7 +26,7 @@ const Blog = () => {
     };
     fetchData();
     // eslint-disable-next-line
-  }, []);
+  }, [id]);
 
   const date = new Date(fetchedData?.data?.attributes?.publishedAt);
   return (

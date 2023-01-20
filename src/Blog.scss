@@ -1,4 +1,7 @@
+@import "./components/RelatedCard.scss";
+
 .blog-head-wrapper {
+  padding: 2rem 0rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -38,6 +41,7 @@
   line-height: 3.5rem;
   max-width: 1040px;
   color: var(--text-light);
+  padding-top: 3rem;
 }
 
 .post-info-wrapper {
@@ -62,7 +66,7 @@
   padding: 1.5rem;
   border-radius: 1rem;
   border: 1px solid var(--white-opacity);
-  gap: 1rem;
+  gap: 2rem;
   display: flex;
   flex-direction: column;
 }

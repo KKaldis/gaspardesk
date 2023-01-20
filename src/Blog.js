@@ -6,6 +6,7 @@ import "./Blog.scss";
 import Loader from "./components/ui/Loader";
 import UserIcon from "./components/ui/UserIcon";
 import { ImageLoader } from "./components/ui/ImageLoader";
+import RelatedContainer from "./components/RelatedContainer";
 const Blog = () => {
   const [fetchedData, setFetchedData] = useState(false);
   const { id } = useParams();
@@ -27,7 +28,6 @@ const Blog = () => {
     fetchData();
     // eslint-disable-next-line
   }, []);
-  // console.log(fetchedData?.data?.attributes?.title);
 
   const date = new Date(fetchedData?.data?.attributes?.publishedAt);
   return (
@@ -41,6 +41,7 @@ const Blog = () => {
               <span>/Blog Post</span>
             </div>
           </div>
+          {/* <div> */}
           <div className="blog-post-title">
             {fetchedData?.data?.attributes?.title}
           </div>
@@ -66,13 +67,12 @@ const Blog = () => {
             </div>
             <Share />
           </div>
-
           <div className="post-content-wrapper">
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
-
             {fetchedData?.data?.attributes.content}
           </div>
-          {/* <div>{JSON.stringify(fetchedData)}</div> */}
+          {/* </div> */}
+          <RelatedContainer />
         </div>
       ) : (
         <Loader />

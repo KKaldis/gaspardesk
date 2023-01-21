@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const RelatedCard = ({ data }) => {
   const { imageUrl, title, publishedAt } = data.attributes;
   const { id } = data;
-  console.log(data);
   const date = new Date(publishedAt);
 
   return (

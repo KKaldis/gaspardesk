@@ -5,7 +5,7 @@ import Loader from "./ui/Loader";
 
 const RelatedContainer = ({ currentPostId }) => {
   const [posts, setPosts] = useState(false);
-
+  console.log(currentPostId);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -14,7 +14,11 @@ const RelatedContainer = ({ currentPostId }) => {
           { method: "GET" }
         );
         const json = await response.json();
-        setPosts(json);
+        //! remove previewing article from related
+        const differentPosts = json.data.filter(
+          (post) => String(post.id) !== currentPostId
+        );
+        setPosts(differentPosts);
       } catch (error) {
         console.log(error);
       }
@@ -23,14 +27,12 @@ const RelatedContainer = ({ currentPostId }) => {
     // eslint-disable-next-line
   }, []);
 
-  const { data } = posts;
-
   return (
     <div>
       <div className="post-related-title">Related Articles</div>
       {posts ? (
         <div className="post-realted-container">
-          {data.filter((post) => post.id !== currentPostId).slice(0, 3).map((post, i) => (
+          {posts.slice(0, 3).map((post, i) => (
             <RelatedCard key={i} data={post} />
           ))}
         </div>

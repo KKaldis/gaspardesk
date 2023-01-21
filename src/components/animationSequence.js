@@ -120,7 +120,7 @@ const animation = () => {
   });
 
   item1.from("#anim-item-9", 0, {
-    fill: "var(--primary)",
+    fill: "var(--light)",
     delay: 0,
     ease: "Power1.easeInOut",
   });

@@ -16,14 +16,12 @@ const animation = () => {
   });
 
   item2.from("#anim-item-2", 0.5, {
-    rotate: "-180deg",
     y: "200",
     delay: 1,
     scale: 0,
     ease: "Power1.easeInOut",
   });
   item2.to("#anim-item-2", 0.5, {
-    rotate: "180",
     y: "-200",
     delay: 1,
     scale: 0,

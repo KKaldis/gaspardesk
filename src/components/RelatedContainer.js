@@ -3,7 +3,7 @@ import RelatedCard from "./RelatedCard";
 import "./RelatedContainer.scss";
 import Loader from "./ui/Loader";
 
-const RelatedContainer = () => {
+const RelatedContainer = ({ currentPostId }) => {
   const [posts, setPosts] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const RelatedContainer = () => {
       <div className="post-related-title">Related Articles</div>
       {posts ? (
         <div className="post-realted-container">
-          {data.slice(0, 3).map((post, i) => (
+          {data.filter((post) => post.id !== currentPostId).slice(0, 3).map((post, i) => (
             <RelatedCard key={i} data={post} />
           ))}
         </div>

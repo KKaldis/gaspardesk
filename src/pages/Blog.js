@@ -71,7 +71,7 @@ const Blog = () => {
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
             {fetchedData?.data?.attributes.content}
           </div>
-          <RelatedContainer />
+          <RelatedContainer currentPostId={id} />
         </div>
       ) : (
         <Loader />

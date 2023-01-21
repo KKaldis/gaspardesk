@@ -14,8 +14,18 @@ $heroFontSize: 80px;
 }
 
 .hero-rounded {
+  position: relative;
   @extend .border-div;
   border-radius: calc($line-height / 1.9);
+  z-index: 2;
+
+  span {
+    position: relative;
+    overflow: hidden;
+    border-radius: calc($line-height / 1.9);
+    width: 114px;
+    height: 114px;
+  }
 }
 
 .hero-underlined {
@@ -71,7 +81,7 @@ $heroFontSize: 80px;
   }
 
   &:nth-child(2) {
-    transition: all 0.6s cubic-bezier(0.45, 1.64, 0.48, 0.15);
+    transition: all 0.4s cubic-bezier(0.45, 1.64, 0.48, 0.15);
     .border-div {
       padding: 0rem 1rem;
     }
@@ -93,4 +103,26 @@ $heroFontSize: 80px;
   background-color: var(--hero-border);
   color: var(--hero-bg);
   font-weight: 500;
+}
+
+#anim-item-1,
+#anim-item-2,
+#anim-item-3,
+#anim-item-4,
+#anim-item-5,
+#anim-item-6,
+#anim-item-7,
+#anim-item-8,
+#anim-item-9,
+#anim-item-10,
+#anim-item-11,
+#anim-item-12 {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }

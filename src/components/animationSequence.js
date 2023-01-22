@@ -5,7 +5,7 @@ const animation = () => {
   const item2 = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
 
   const top = {
-    y: "-200",
+    y: "-120",
     delay: 1,
     scale: 0,
     duration: 0.5,
@@ -13,7 +13,7 @@ const animation = () => {
   };
 
   const bottom = {
-    y: "200",
+    y: "120",
     delay: 1,
     scale: 0,
     duration: 0.5,
@@ -75,8 +75,8 @@ const animation = () => {
   });
   item1.to("#anim-item-9", {
     duration: 0.5,
-    x: "200",
-    y: "-200",
+    x: "120",
+    y: "-120",
     delay: 0.5,
     scale: 0,
     display: "none",
@@ -84,8 +84,8 @@ const animation = () => {
 
   item2.from("#anim-item-10", {
     duration: 0.5,
-    x: "-200",
-    y: "200",
+    x: "-120",
+    y: "120",
     delay: 2,
     scale: 0,
     ease: Elastic.easeOut.config(1, 0.3),
@@ -95,7 +95,7 @@ const animation = () => {
 
   item1.from("#anim-item-11", {
     duration: 0.5,
-    x: "-200",
+    x: "-120",
     delay: 1,
     scale: 0,
     ease: "Power1.easeInOut",

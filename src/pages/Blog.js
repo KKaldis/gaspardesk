@@ -7,6 +7,12 @@ import Loader from "../components/ui/Loader";
 import UserIcon from "../components/ui/UserIcon";
 import { ImageLoader } from "../components/ui/ImageLoader";
 import RelatedContainer from "../components/RelatedContainer";
+import { motion } from "framer-motion";
+import {
+  pageTransitions,
+  transitionVariants,
+} from "../components/ui/animationVariants";
+
 const Blog = () => {
   const [fetchedData, setFetchedData] = useState(false);
   const { id } = useParams();
@@ -32,7 +38,13 @@ const Blog = () => {
 
   const date = new Date(fetchedData?.data?.attributes?.publishedAt);
   return (
-    <>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={transitionVariants}
+      transition={pageTransitions}
+    >
       {fetchedData ? (
         <div>
           <div className="blog-head-nav">
@@ -76,7 +88,7 @@ const Blog = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </motion.div>
   );
 };
 

@@ -6,6 +6,11 @@ import PostsContainer from "../components/PostsContainer";
 import { useGetContext, useUpdateContext } from "../context/ContextProviders";
 import ACTIONS from "../context/actions";
 import Pagination from "../components/ui/Pagination";
+import { motion } from "framer-motion";
+import {
+  pageTransitions,
+  transitionVariants,
+} from "../components/ui/animationVariants";
 
 const Landing = () => {
   const state = useGetContext();
@@ -30,7 +35,13 @@ const Landing = () => {
   }, []);
 
   return (
-    <>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={transitionVariants}
+      transition={pageTransitions}
+    >
       <Hero />
       {posts ? (
         <div>
@@ -41,7 +52,7 @@ const Landing = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </motion.div>
   );
 };
 

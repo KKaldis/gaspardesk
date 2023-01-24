@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import TagsSearch from "../components/TagsSearch";
 import Loader from "../components/ui/Loader";
-import { PostContainer } from "../components/PostContainer";
+import PostsContainer from "../components/PostsContainer";
 import { useGetContext, useUpdateContext } from "../context/ContextProviders";
 import ACTIONS from "../context/actions";
 import Pagination from "../components/ui/Pagination";
@@ -35,7 +35,7 @@ const Landing = () => {
       {posts ? (
         <div>
           <TagsSearch />
-          <PostContainer />
+          <PostsContainer />
           <Pagination />
         </div>
       ) : (

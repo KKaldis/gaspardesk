@@ -1,15 +1,12 @@
 import React from "react";
 import "./Loader.scss";
 import { motion } from "framer-motion";
-import { pageTransitions, transitionVariants } from "./animationVariants";
 const Loader = () => {
   return (
     <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={transitionVariants}
-      transition={pageTransitions}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <svg
         className="loader-wrapper"

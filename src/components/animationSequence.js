@@ -51,7 +51,7 @@ const animation = () => {
 
   item1.from("#anim-item-9", {
     fill: "var(--light)",
-    ...bottom
+    ...bottom,
   });
   item1.to("#anim-item-9", {
     fill: "var(--light)",

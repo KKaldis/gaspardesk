@@ -38,15 +38,15 @@ const Blog = () => {
 
   const date = new Date(fetchedData?.data?.attributes?.publishedAt);
   return (
-    <motion.div
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={transitionVariants}
-      transition={pageTransitions}
-    >
+    <>
       {fetchedData ? (
-        <div>
+        <motion.div
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={transitionVariants}
+          transition={pageTransitions}
+        >
           <div className="blog-head-nav">
             <Back to={"/"} />
             <div className="blog-breadcrumbs">
@@ -79,16 +79,23 @@ const Blog = () => {
             </div>
             <Share />
           </div>
-          <div className="post-content-wrapper">
+          <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            variants={transitionVariants}
+            transition={pageTransitions}
+            className="post-content-wrapper"
+          >
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
             {fetchedData?.data?.attributes.content}
-          </div>
+          </motion.div>
           <RelatedContainer currentPostId={id} />
-        </div>
+        </motion.div>
       ) : (
         <Loader />
       )}
-    </motion.div>
+    </>
   );
 };
 

@@ -5,6 +5,5 @@ export const transitionVariants = {
 
 export const pageTransitions = {
   duration: 1.5,
-  // delay: 0.5,
   ease: "backInOut",
 };

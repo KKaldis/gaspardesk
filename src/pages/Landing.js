@@ -44,11 +44,17 @@ const Landing = () => {
     >
       <Hero />
       {posts ? (
-        <div>
+        <motion.div
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={transitionVariants}
+          transition={pageTransitions}
+        >
           <TagsSearch />
           <PostsContainer />
           <Pagination />
-        </div>
+        </motion.div>
       ) : (
         <Loader />
       )}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import img1 from "../assets/1.svg";
+import Img1 from "../assets/1";
 import Img2 from "../assets/2";
 import img3 from "../assets/3.svg";
 import img4 from "../assets/4.svg";
@@ -22,7 +22,7 @@ export const AnimatedO = () => {
       style={{ "--hero-border": "var(--secondary)" }}
     >
       <span>
-        <img src={img1} id="anim-item-1" alt="" />
+        <Img1 _id={"anim-item-1"} id="anim-item-1" />
         <Img2 id="anim-item-2" />
         <img src={img3} id="anim-item-3" alt="" />
         <img src={img4} id="anim-item-4" alt="" />
@@ -32,7 +32,7 @@ export const AnimatedO = () => {
         <img src={img8} id="anim-item-8" alt="" />
         <Img9 id="anim-item-9" />
         <img src={img10} id="anim-item-10" alt="" />
-        <img src={img1} id="anim-item-11" alt="" />
+        <Img1 _id={"anim-item-11"} id="anim-item-11" />
       </span>
     </div>
   );

@@ -69,4 +69,8 @@
   gap: 2rem;
   display: flex;
   flex-direction: column;
+
+  img {
+    border-radius: 0.5rem;
+  }
 }

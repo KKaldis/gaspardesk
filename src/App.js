@@ -6,6 +6,7 @@ import NavMenu from "./layout/NavMenu";
 import { BrowserRouter as Router } from "react-router-dom";
 import ContextProvider from "./context/ContextProviders";
 import AppRoutes from "./routes/AppRoutes";
+import BgAnim from "./BgAnim";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <ContextProvider>
         <div className="App">
           <div className="App-Layout">
+            <BgAnim />
             <NavMenu />
             <AppRoutes />
             <Footer />

@@ -8,6 +8,8 @@
   color: var(--text-gray);
   background: var(--white-opacity);
   border-radius: 1rem;
+  z-index: 2;
+
   cursor: pointer;
   .title {
     font-family: "Montserrat";

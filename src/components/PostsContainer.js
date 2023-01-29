@@ -9,19 +9,20 @@ const PostsContainer = () => {
   const { filteredPosts } = state;
 
   return (
-    <div className="posts-container">
+    <motion.div layout className="posts-container">
       {filteredPosts?.map((post) => (
         <motion.div
+          key={post.id}
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duraion: 0.5 }}
+          layoutId={post.id}
         >
-          <Link to={`/blog/${post.id}`} key={post.id}>
+          <Link to={`/blog/${post.id}`}>
             <PostCard id={post.id} data={post.attributes} />
           </Link>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

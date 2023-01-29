@@ -4,10 +4,16 @@ import logo from "../assets/footer-logo.svg";
 import navarrow from "../assets/navarrow.svg";
 import linkedin from "../assets/linkedin.svg";
 import twitter from "../assets/twitter.svg";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <motion.div
+      className="footer"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <hr />
       <div className="footer-container">
         <div>
@@ -49,7 +55,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright">Copyright @ Gaspardesk</div>
-    </div>
+    </motion.div>
   );
 };
 

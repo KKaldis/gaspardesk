@@ -33,7 +33,7 @@ const RelatedContainer = ({ currentPostId }) => {
       {posts ? (
         <div className="post-realted-container">
           {posts.slice(0, 3).map((post, i) => (
-            <RelatedCard key={i} data={post} />
+            <RelatedCard key={i} data={post} index={i} />
           ))}
         </div>
       ) : (

@@ -2,16 +2,23 @@ import React from "react";
 import { ImageLoader } from "./ui/ImageLoader";
 import next from "../assets/next.svg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const RelatedCard = ({ data }) => {
+const RelatedCard = ({ data, index }) => {
   const { imageUrl, title, publishedAt } = data.attributes;
   const { id } = data;
   const date = new Date(publishedAt);
+  const animDirection = [{ x: -100 }, { y: 100 }, { x: 100 }];
 
   return (
-    <div className="post-related-card">
+    <motion.div
+      className=" post-related-card"
+      initial={{ opacity: 0, ...animDirection[index] }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      transition={{ duraion: 0.5, delay: 0.25 }}
+    >
       <Link to={`/blog/${id}/`}>
-        <ImageLoader url={imageUrl} />
+        <ImageLoader url={imageUrl} imgClass="post-related-card-img " />
         <div>
           <div className="post-related-card-date">
             {date.toLocaleDateString()}
@@ -23,7 +30,7 @@ const RelatedCard = ({ data }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Loader from "./Loader";
 
-export const ImageLoader = ({ url }) => {
+export const ImageLoader = ({ url, imgClass }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -11,6 +11,7 @@ export const ImageLoader = ({ url }) => {
       </div>
       <img
         src={url}
+        className={imgClass}
         alt="Blog Post Preview"
         onLoad={() => setIsLoading(false)}
         style={{ display: isLoading ? "none" : "block" }}

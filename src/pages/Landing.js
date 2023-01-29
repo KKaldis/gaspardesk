@@ -39,22 +39,17 @@ const Landing = () => {
       initial="out"
       animate="in"
       exit="out"
+      key="landing2"
       variants={transitionVariants}
       transition={pageTransitions}
     >
       <Hero />
       {posts ? (
-        <motion.div
-          initial="out"
-          animate="in"
-          exit="out"
-          variants={transitionVariants}
-          transition={pageTransitions}
-        >
+        <>
           <TagsSearch />
           <PostsContainer />
           <Pagination />
-        </motion.div>
+        </>
       ) : (
         <Loader />
       )}

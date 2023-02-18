@@ -8,6 +8,8 @@ import UserIcon from "../components/ui/UserIcon";
 import { ImageLoader } from "../components/ui/ImageLoader";
 import RelatedContainer from "../components/RelatedContainer";
 import { motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
   pageTransitions,
   transitionVariants,
@@ -88,7 +90,11 @@ const Blog = () => {
             className="post-content-wrapper"
           >
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
-            {fetchedData?.data?.attributes.content}
+            <ReactMarkdown
+              children={fetchedData?.data?.attributes.content}
+              remarkPlugins={[remarkGfm]}
+            />
+            ,{}
           </motion.div>
           <RelatedContainer currentPostId={id} />
         </motion.div>

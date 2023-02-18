@@ -73,4 +73,14 @@
   & img {
     border-radius: 0.5rem;
   }
+
+  a {
+    color: var(--secondary);
+    &:hover {
+      color: var(--secondary-darker);
+    }
+    &:active {
+      color: var(--primary);
+    }
+  }
 }

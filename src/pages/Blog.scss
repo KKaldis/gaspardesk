@@ -71,11 +71,12 @@
   flex-direction: column;
 
   & img {
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
   }
 
   a {
     color: var(--secondary);
+    transition: 0.5s;
     &:hover {
       color: var(--secondary-darker);
     }

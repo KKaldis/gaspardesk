@@ -90,11 +90,12 @@ const Blog = () => {
             className="post-content-wrapper"
           >
             <ImageLoader url={fetchedData?.data?.attributes.imageUrl} />
-            <ReactMarkdown
-              children={fetchedData?.data?.attributes.content}
-              remarkPlugins={[remarkGfm]}
-            />
-            ,{}
+            <div>
+              <ReactMarkdown
+                children={fetchedData?.data?.attributes.content}
+                remarkPlugins={[remarkGfm]}
+              />
+            </div>
           </motion.div>
           <RelatedContainer currentPostId={id} />
         </motion.div>

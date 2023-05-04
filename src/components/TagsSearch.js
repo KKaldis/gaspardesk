@@ -12,7 +12,7 @@ const TagsSearch = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_}/cms/api/tags/`,
+          `${process.env.REACT_APP_BACKEND}/cms/api/tags/`,
           { method: "GET" }
         );
         const json = await response.json();

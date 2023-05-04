@@ -21,7 +21,7 @@ const Landing = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_}/cms/api/articles?populate=*`,
+          `${process.env.REACT_APP_BACKEND}/cms/api/articles?populate=*`,
           { method: "GET" }
         );
         const json = await response.json();
